@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { shade } from 'polished';
 
-import loginBackground from '../../assets/login-background.png';
+import registerBackground from '../../assets/register-background.png';
 
 export const Container = styled.div`
   height: 100vh;
@@ -49,7 +49,7 @@ export const Content = styled.div`
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      color: ${shade(0.2, '#ff9000')};
+      color: ${shade(0.2, '#FF9000')};
     }
 
     svg {
@@ -60,6 +60,6 @@ export const Content = styled.div`
 
 export const Background = styled.div`
   flex: 1;
-  background: url(${loginBackground}) no-repeat center;
+  background: url(${registerBackground}) no-repeat center;
   background-size: cover;
 `;
