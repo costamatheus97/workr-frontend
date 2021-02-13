@@ -1,5 +1,4 @@
 import React, { createContext, useCallback, useState, useContext } from 'react';
-import { ObjectType } from 'typescript';
 import api from '../services/api';
 
 interface AuthState {
@@ -9,12 +8,15 @@ interface AuthState {
 
 interface SignInCredentials {
   email: string;
-  password: string;
+  hash: string;
 }
 
 interface AuthContextData {
-  user: object;
-  signIn(credentials: SignInCredentials): Promise<void>;
+  user: {
+    is_company?: boolean;
+  };
+  userSignIn(credentials: SignInCredentials): Promise<void>;
+  companySignIn(credentials: SignInCredentials): Promise<void>;
   signOut(): void;
 }
 
@@ -22,8 +24,8 @@ const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 const AuthProvider: React.FC = ({ children }) => {
   const [data, setData] = useState<AuthState>(() => {
-    const token = localStorage.getItem('@GoBarber:token');
-    const user = localStorage.getItem('@GoBarber:user');
+    const token = localStorage.getItem('@workr:token');
+    const user = localStorage.getItem('@workr:user');
 
     if (token && user) {
       return { token, user: JSON.parse(user) };
@@ -32,29 +34,45 @@ const AuthProvider: React.FC = ({ children }) => {
     return {} as AuthState;
   });
 
-  const signIn = useCallback(async ({ email, password }) => {
-    const response = await api.post('sessions', {
+  const userSignIn = useCallback(async ({ email, hash }) => {
+    const response = await api.post('sessions/users', {
       email,
-      password,
+      hash,
     });
 
     const { token, user } = response.data;
 
-    localStorage.setItem('@GoBarber:token', token);
-    localStorage.setItem('@GoBarber:user', JSON.stringify(user));
+    localStorage.setItem('@workr:token', token);
+    localStorage.setItem('@workr:user', JSON.stringify(user));
+
+    setData({ token, user });
+  }, []);
+
+  const companySignIn = useCallback(async ({ email, hash }) => {
+    const response = await api.post('sessions/companies', {
+      email,
+      hash,
+    });
+
+    const { token, user } = response.data;
+
+    localStorage.setItem('@workr:token', token);
+    localStorage.setItem('@workr:user', JSON.stringify(user));
 
     setData({ token, user });
   }, []);
 
   const signOut = useCallback(() => {
-    localStorage.removeItem('@GoBarber:token');
-    localStorage.removeItem('@GoBarber:user');
+    localStorage.removeItem('@workr:token');
+    localStorage.removeItem('@workr:user');
 
     setData({} as AuthState);
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user: data.user, signIn, signOut }}>
+    <AuthContext.Provider
+      value={{ user: data.user, userSignIn, companySignIn, signOut }}
+    >
       {children}
     </AuthContext.Provider>
   );

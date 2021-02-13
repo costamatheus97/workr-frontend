@@ -1,4 +1,3 @@
-import { ExecFileOptionsWithStringEncoding } from 'child_process';
 import React from 'react';
 
 import { Container } from './styles';
