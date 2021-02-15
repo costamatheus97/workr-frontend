@@ -72,6 +72,7 @@ const CompanySignIn: React.FC = () => {
 
   return (
     <Container>
+      <Background />
       <Content>
         <AnimatedContainer>
           <img src={logoImg} alt="GoBarber" />
@@ -92,14 +93,13 @@ const CompanySignIn: React.FC = () => {
             <Button type="submit">Entrar</Button>
             <a href="/forgot">Esqueci minha senha</a>
           </Form>
-
           <Link to="/signup/companies">
             <FiLogIn />
             Criar conta
           </Link>
         </AnimatedContainer>
       </Content>
-      <Background />
+      
     </Container>
   );
 };

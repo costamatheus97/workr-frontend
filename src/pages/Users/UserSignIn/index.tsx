@@ -72,6 +72,7 @@ const UserSignIn: React.FC = () => {
 
   return (
     <Container>
+      <Background />
       <Content>
         <AnimatedContainer>
           <img src={logoImg} alt="GoBarber" />
@@ -99,7 +100,6 @@ const UserSignIn: React.FC = () => {
           </Link>
         </AnimatedContainer>
       </Content>
-      <Background />
     </Container>
   );
 };
