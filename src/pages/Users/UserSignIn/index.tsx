@@ -53,7 +53,7 @@ const UserSignIn: React.FC = () => {
           hash: data.password,
         });
 
-        history.push('/user/dashboard');
+        history.push('/users/dashboard');
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
