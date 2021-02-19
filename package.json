@@ -11,6 +11,9 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/yup": "^0.26.37",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/styled-components": "^5.1.0",
+    "@types/react-day-picker": "^5.3.0",
     "@unform/core": "^2.1.0",
     "@unform/web": "^2.1.0",
     "axios": "^0.19.2",
@@ -21,6 +24,7 @@
     "react-dom": "16.13.0",
     "react-icons": "^3.10.0",
     "react-router-dom": "^5.2.0",
+    
     "react-scripts": "3.4.0",
     "react-spring": "^8.0.27",
     "styled-components": "^5.1.0",
@@ -29,10 +33,7 @@
     "yup": "^0.28.4"
   },
   "devDependencies": {
-    "@testing-library/react-hooks": "^3.3.0",
-    "@types/react-day-picker": "^5.3.0",
-    "@types/react-router-dom": "^5.1.7",
-    "@types/styled-components": "^5.1.0",
+    "@testing-library/react-hooks": "^3.3.0",  
     "@typescript-eslint/eslint-plugin": "^2.28.0",
     "@typescript-eslint/parser": "^2.28.0",
     "axios-mock-adapter": "^1.18.1",
