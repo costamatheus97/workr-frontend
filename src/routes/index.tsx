@@ -14,6 +14,8 @@ import CompanySignUp from '../pages/Companies/CompanySignUp';
 import CompanySignIn from '../pages/Companies/CompanySignIn';
 import CompanyDashboard from '../pages/Companies/Dashboard';
 import CompanyProfile from '../pages/Companies/UpdateProfile';
+import CompanyPublishJobs from '../pages/Companies/Jobs';
+import CompanyJobList from '../pages/Companies/JobList';
 
 const Routes: React.FC = () => (
   <Switch>
@@ -40,6 +42,16 @@ const Routes: React.FC = () => (
     <Route
       path="/companies/profile"
       component={CompanyProfile}
+      isPrivate="companies"
+    />
+    <Route
+      path="/companies/jobs/list"
+      component={CompanyJobList}
+      isPrivate="companies"
+    />
+    <Route
+      path="/companies/jobs/publish"
+      component={CompanyPublishJobs}
       isPrivate="companies"
     />
   </Switch>

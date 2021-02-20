@@ -8,7 +8,8 @@ const CompanyHeader: React.FC = () => {
       <div>
         <a href="/companies/dashboard">Logo</a>
         <div>
-          <a href="/companies/jobs">Publicar uma vaga</a>
+          <a href="/companies/jobs/publish">Publicar uma vaga</a>
+          <a href="/companies/jobs/list">Minhas vagas</a>
           <a href="/companies/profile">Minha Conta</a>
         </div>
       </div>
