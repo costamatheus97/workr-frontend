@@ -14,6 +14,8 @@ interface SignInCredentials {
 interface AuthContextData {
   user: {
     is_company?: boolean;
+    _id?: string;
+    company_name?: string;
   };
   userSignIn(credentials: SignInCredentials): Promise<void>;
   companySignIn(credentials: SignInCredentials): Promise<void>;
