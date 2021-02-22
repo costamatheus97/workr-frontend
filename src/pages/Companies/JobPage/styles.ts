@@ -19,14 +19,6 @@ export const JobContainer = styled.li`
     margin-top: 24px;
   }
 
-  a {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    color: #fff;
-    height: 100%;
-  }
-
   div {
     list-style: none;
     width: 100%;
@@ -64,3 +56,9 @@ export const JobContainer = styled.li`
     }
   }
 `;
+
+export const CandidatesContainer = styled.ul`
+  margin-top: 3rem;
+`;
+
+export const Candidate = styled.li``;

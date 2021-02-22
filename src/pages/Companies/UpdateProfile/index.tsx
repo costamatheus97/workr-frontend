@@ -50,14 +50,14 @@ const UpdateProfile: React.FC = () => {
 
     if (formRef.current) {
       formRef.current.setData({
-        city: data[0].city,
-        state: data[0].state,
-        country: data[0].country,
-        cep: data[0].cep,
-        cnpj: data[0].cnpj,
-        description: data[0].description,
-        employees: data[0].employees,
-        field: data[0].field,
+        city: data.city,
+        state: data.state,
+        country: data.country,
+        cep: data.cep,
+        cnpj: data.cnpj,
+        description: data.description,
+        employees: data.employees,
+        field: data.field,
       });
     }
   }

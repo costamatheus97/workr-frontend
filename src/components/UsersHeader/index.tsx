@@ -1,17 +1,19 @@
 import React from 'react';
 
-const UsersHeader: React.FC = () => {
+import { Container } from './styles';
+
+const CompanyHeader: React.FC = () => {
   return (
-    <header>
+    <Container>
       <div>
-        <h1>Logo</h1>
+        <a href="/users/dashboard">Logo</a>
+        <div>
+          <a href="/users/jobs">Ver vagas</a>
+          <a href="/users/profile">Minha Conta</a>
+        </div>
       </div>
-      <div>
-        <a href="/users/dashboard">Início</a>
-        <a href="/users/profile">Minha Conta</a>
-      </div>
-    </header>
+    </Container>
   );
 };
 
-export default UsersHeader;
+export default CompanyHeader;

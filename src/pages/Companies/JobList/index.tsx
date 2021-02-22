@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
+import { Link } from 'react-router-dom';
+
 import { FiTrash2 } from 'react-icons/fi';
 import { useAuth } from '../../../context/AuthContext';
 
@@ -53,7 +55,7 @@ const JobList: React.FC = () => {
   }
 
   const fetchJobs = useCallback(async () => {
-    const { data } = await api.get(`/jobs/${user._id}`, config);
+    const { data } = await api.get(`/jobs/company/${user._id}`, config);
 
     setJobs(data);
   }, []);
@@ -70,30 +72,32 @@ const JobList: React.FC = () => {
           jobs.map(job => {
             return (
               <JobContainer key={job?._id}>
-                <div>
-                  <span>Título</span>
-                  <p>{job?.title}</p>
-                </div>
-                <div>
-                  <span>Nível</span>
-                  <p>{job?.level}</p>
-                </div>
-                <div>
-                  <span>Empresa</span>
-                  <p>{job?.company}</p>
-                </div>
-                <div>
-                  <span>Descrição</span>
-                  <p>{job?.description}</p>
-                </div>
-                <div>
-                  <button
-                    type="button"
-                    onClick={() => deleteJobHandler(job?._id)}
-                  >
-                    <FiTrash2 />
-                  </button>
-                </div>
+                <Link to={`/companies/jobs/${job?._id}`}>
+                  <div>
+                    <span>Título</span>
+                    <p>{job?.title}</p>
+                  </div>
+                  <div>
+                    <span>Nível</span>
+                    <p>{job?.level}</p>
+                  </div>
+                  <div>
+                    <span>Empresa</span>
+                    <p>{job?.company}</p>
+                  </div>
+                  <div>
+                    <span>Descrição</span>
+                    <p>{job?.description}</p>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      onClick={() => deleteJobHandler(job?._id)}
+                    >
+                      <FiTrash2 />
+                    </button>
+                  </div>
+                </Link>
               </JobContainer>
             );
           })

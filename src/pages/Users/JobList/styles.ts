@@ -1,30 +1,50 @@
 import styled from 'styled-components';
 
-export const Container = styled.ul`
+export const Container = styled.div`
   margin-top: 3rem;
+  padding: 0 1rem;
+  display: flex;
 `;
 
-export const JobContainer = styled.li`
+export const JobListContainer = styled.ul`
+  width: 40%;
+`;
+
+export const CurrentJobContainer = styled.div`
+  border: 1px solid #fff;
+  border-radius: 4px;
+  width: 100%;
+  text-align: center;
+`;
+
+export const CurrentJob = styled.div``;
+
+export const Filter = styled.div`
+  border: 1px solid #fff;
+  border-radius: 4px;
+  width: 300px;
+  text-align: center;
+`;
+
+export const Job = styled.li`
   border: 1px solid #fff;
   border-radius: 4px;
   margin: 0 1rem;
   padding: 0 1rem;
   height: 120px;
   text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 
   display: flex;
   align-items: center;
 
-  & + li {
-    margin-top: 24px;
+  &:hover {
+    border-color: orange;
   }
 
-  a {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    color: #fff;
-    height: 100%;
+  & + li {
+    margin-top: 24px;
   }
 
   div {
@@ -48,8 +68,12 @@ export const JobContainer = styled.li`
       text-align: center;
     }
 
+    .candidature__status {
+      font-size: 12px;
+    }
+
     button {
-      background: #eb4f42;
+      background: lightgreen;
       border: 0;
       outline: 0;
       border-radius: 4px;
@@ -58,7 +82,7 @@ export const JobContainer = styled.li`
 
       svg {
         path {
-          fill: #eb4f42;
+          fill: lightgreen;
         }
       }
     }

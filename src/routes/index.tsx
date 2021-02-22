@@ -9,6 +9,7 @@ import UserSignUp from '../pages/Users/UserSignUp';
 import UserSignIn from '../pages/Users/UserSignIn';
 import UserDashboard from '../pages/Users/Dashboard';
 import UserProfile from '../pages/Users/UpdateProfile';
+import UserJobList from '../pages/Users/JobList';
 
 import CompanySignUp from '../pages/Companies/CompanySignUp';
 import CompanySignIn from '../pages/Companies/CompanySignIn';
@@ -16,6 +17,7 @@ import CompanyDashboard from '../pages/Companies/Dashboard';
 import CompanyProfile from '../pages/Companies/UpdateProfile';
 import CompanyPublishJobs from '../pages/Companies/Jobs';
 import CompanyJobList from '../pages/Companies/JobList';
+import CompanyJobPage from '../pages/Companies/JobPage';
 
 const Routes: React.FC = () => (
   <Switch>
@@ -33,6 +35,7 @@ const Routes: React.FC = () => (
       isPrivate="users"
     />
     <Route path="/users/profile" component={UserProfile} isPrivate="users" />
+    <Route path="/users/jobs" component={UserJobList} isPrivate="users" />
 
     <Route
       path="/companies/dashboard"
@@ -47,6 +50,11 @@ const Routes: React.FC = () => (
     <Route
       path="/companies/jobs/list"
       component={CompanyJobList}
+      isPrivate="companies"
+    />
+    <Route
+      path="/companies/jobs/:id"
+      component={CompanyJobPage}
       isPrivate="companies"
     />
     <Route
