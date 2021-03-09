@@ -12,8 +12,7 @@ export const Container = styled.div<ContainerProps>`
   max-width: 340px;
   width: 100%;
   height: 56px;
-  background: #232129;
-  border: 2px solid #232129;
+  background: #eeeeee;
   border-radius: 10px;
   padding: 1rem;
   color: #666360;
@@ -35,14 +34,14 @@ export const Container = styled.div<ContainerProps>`
   ${props =>
     props.isFocused &&
     css`
-      color: #ff9000;
-      border-color: #ff9000;
+      color: #2e70d9;
+      border-color: #2e70d9;
     `}
 
   ${props =>
     props.isFilled &&
     css`
-      color: #ff9000;
+      color: #2e70d9;
     `}
 
   input {

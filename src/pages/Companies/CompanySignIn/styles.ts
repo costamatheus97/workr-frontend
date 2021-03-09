@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components';
 
 import { shade } from 'polished';
 
-import loginBackground from '../../../assets/login-background.png';
+import loginBackground from '../../../assets/login-background.jpg';
 
 export const Container = styled.div`
   height: 100vh;
@@ -50,27 +50,28 @@ export const AnimatedContainer = styled.div`
 
     h1 {
       margin-bottom: 24px;
+      color: #242424;
     }
 
     a {
-      color: #f4ede8;
+      color: #242424;
       font-family: 'Roboto Slab', serif;
       transition: all 0.2s ease-in-out;
 
       &:hover {
-        color: ${shade(0.2, '#f4ede8')};
+        color: ${shade(0.2, '#242424')};
       }
     }
   }
 
   > a {
-    color: #ff9000;
+    color: #2e70d9;
     display: flex;
     align-items: center;
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      color: ${shade(0.2, '#ff9000')};
+      color: ${shade(0.2, '#2e70d9')};
     }
 
     svg {

@@ -6,7 +6,7 @@ import { FiUser, FiBriefcase } from 'react-icons/fi';
 
 import { Container, Background, Content, AnimatedContainer } from './styles';
 
-import logoImg from '../../../assets/logo.svg';
+import logoImg from '../../../assets/logo.png';
 
 const SignIn: React.FC = () => {
   return (

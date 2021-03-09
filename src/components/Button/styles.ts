@@ -7,14 +7,14 @@ export const Container = styled.button`
   max-width: 340px;
   width: 100%;
   height: 56px;
-  background: #ff9000;
+  background: #40e358;
   border-radius: 10px;
   border: 0;
   font-weight: 600;
-  color: #312e38;
+  color: #ffffff;
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background: ${shade(0.2, '#ff9000')};
+    background: ${shade(0.2, '#40e358')};
   }
 `;

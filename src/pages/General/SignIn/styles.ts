@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components';
 
 import { shade } from 'polished';
 
-import loginBackground from '../../../assets/login-background.png';
+import loginBackground from '../../../assets/login-background.jpg';
 
 export const Container = styled.div`
   height: 100vh;
@@ -52,10 +52,11 @@ export const AnimatedContainer = styled.div`
 
     width: 160px;
     height: 160px;
-    border: 1px solid #fff;
+    border: 1px solid #2e70d9;
     border-radius: 4px;
+    background: #eee;
 
-    color: #fff;
+    color: #2e70d9;
 
     & + a {
       margin-left: 24px;

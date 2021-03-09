@@ -12,7 +12,7 @@ import getValidationErrors from '../../../utils/getValidationErrors';
 import { useAuth } from '../../../context/AuthContext';
 import { useToast } from '../../../context/ToastContext';
 
-import logoImg from '../../../assets/logo.svg';
+import logoImg from '../../../assets/logo.png';
 
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
