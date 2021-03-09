@@ -79,7 +79,7 @@ const CompanySignUp: React.FC = () => {
       <Background />
       <Content>
         <AnimatedContainer>
-          <img src={logoImg} alt="GoBarber" />
+          <img src={logoImg} alt="workr" />
           <Form ref={formRef} onSubmit={handleSubmit}>
             <h1>Faça seu cadastro</h1>
             <Input

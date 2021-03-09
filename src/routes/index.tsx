@@ -10,6 +10,7 @@ import UserSignIn from '../pages/Users/UserSignIn';
 import UserDashboard from '../pages/Users/Dashboard';
 import UserProfile from '../pages/Users/UpdateProfile';
 import UserJobList from '../pages/Users/JobList';
+import MyJobs from '../pages/Users/MyJobs';
 
 import CompanySignUp from '../pages/Companies/CompanySignUp';
 import CompanySignIn from '../pages/Companies/CompanySignIn';
@@ -35,7 +36,8 @@ const Routes: React.FC = () => (
       isPrivate="users"
     />
     <Route path="/users/profile" component={UserProfile} isPrivate="users" />
-    <Route path="/users/jobs" component={UserJobList} isPrivate="users" />
+    <Route path="/users/jobs/list" component={UserJobList} isPrivate="users" />
+    <Route path="/users/jobs/my-jobs" component={MyJobs} isPrivate="users" />
 
     <Route
       path="/companies/dashboard"
@@ -53,7 +55,7 @@ const Routes: React.FC = () => (
       isPrivate="companies"
     />
     <Route
-      path="/companies/jobs/:id"
+      path="/companies/jobs/job-page/:id"
       component={CompanyJobPage}
       isPrivate="companies"
     />

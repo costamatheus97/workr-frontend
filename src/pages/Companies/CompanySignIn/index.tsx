@@ -75,7 +75,7 @@ const CompanySignIn: React.FC = () => {
       <Background />
       <Content>
         <AnimatedContainer>
-          <img src={logoImg} alt="GoBarber" />
+          <img src={logoImg} alt="workr" />
           <Form ref={formRef} onSubmit={handleSubmit} action="">
             <h1>Faça seu login</h1>
             <Input
@@ -99,7 +99,6 @@ const CompanySignIn: React.FC = () => {
           </Link>
         </AnimatedContainer>
       </Content>
-      
     </Container>
   );
 };

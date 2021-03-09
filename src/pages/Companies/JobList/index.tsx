@@ -72,7 +72,7 @@ const JobList: React.FC = () => {
           jobs.map(job => {
             return (
               <JobContainer key={job?._id}>
-                <Link to={`/companies/jobs/${job?._id}`}>
+                <Link to={`/companies/jobs/job-page/${job?._id}`}>
                   <div>
                     <span>Título</span>
                     <p>{job?.title}</p>

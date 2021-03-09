@@ -69,11 +69,27 @@ const JobList: React.FC = () => {
 
   async function candidateJobHandler(id: string | undefined): Promise<void> {
     try {
-      const data = {
+      const jobData = {
         candidates: user._id,
       };
 
-      await api.put(`/jobs/candidate/${id}`, data, config);
+      const { data } = await api.get(`/jobs/${id}`, config);
+
+      const { candidated_jobs } = user;
+
+      if (id) {
+        candidated_jobs?.push({
+          job_id: id,
+          title: data.title,
+          company: data.company,
+          pay_range: data.pay_range,
+          level: data.level,
+          status: 'pending',
+        });
+      }
+
+      await api.put(`/jobs/candidate/${id}`, jobData, config);
+      await api.put(`/users/`, { candidated_jobs }, config);
       await fetchJobs();
 
       addToast({

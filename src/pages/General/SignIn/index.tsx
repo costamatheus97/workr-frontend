@@ -14,7 +14,7 @@ const SignIn: React.FC = () => {
       <Background />
       <Content>
         <AnimatedContainer>
-          <img src={logoImg} alt="GoBarber" />
+          <img src={logoImg} alt="workr" />
           <div>
             <Link to="/signin/companies">
               <FiBriefcase />

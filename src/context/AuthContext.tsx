@@ -6,6 +6,16 @@ interface AuthState {
   user: object;
 }
 
+export default interface CandidatedJobs {
+  _id?: string;
+  job_id?: string;
+  status?: string;
+  title?: string;
+  company?: string;
+  level?: string;
+  pay_range?: string;
+}
+
 interface SignInCredentials {
   email: string;
   hash: string;
@@ -16,6 +26,7 @@ interface AuthContextData {
     is_company?: boolean;
     _id?: string;
     company_name?: string;
+    candidated_jobs?: CandidatedJobs[];
   };
   userSignIn(credentials: SignInCredentials): Promise<void>;
   companySignIn(credentials: SignInCredentials): Promise<void>;
